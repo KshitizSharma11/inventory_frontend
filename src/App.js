@@ -1,13 +1,15 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Welcome } from './components/welcome.js';
+import { Main } from './components/main.js';
 
-
-import {Welcome} from './components/welcome.js';
-import {Hero} from './components/hero.js';
 function App() {
   return (
-    <div className=" bg-slate-200">
-    <Welcome/>
-    <Hero/>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Welcome />} />
+        <Route path="/start" element={<Main/>}/>
+      </Routes>
+    </Router>
   );
 }
 
